@@ -1,1 +1,1 @@
-read.table("ET1901.txt")
+read.table("ET1901.txt", skip=24)
