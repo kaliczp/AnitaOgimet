@@ -17,7 +17,7 @@ for(i in 2:length(filenames)) {
 
 sum(teljes$Prec, na.rm=TRUE)
 
-teljes$Date <- sub("/","-",teljes$Date)
+ttdate <- paste(c(rep(2017,11),rep(2018,366),rep(2019,23)),teljes$Date,sep="/")
 
 ttdate <- paste(c(rep(2017,10),rep(2018,351),rep(2019,23)),teljes$Date,sep="-")
 
