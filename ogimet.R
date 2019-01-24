@@ -50,3 +50,10 @@ plot.zoo(temps2018.zoo$tavg, xaxs="i", ylim=c(min(temps2018.zoo),max(temps2018.z
 minmax.df <- data.frame(Ido=c(index(temps2018.zoo),index(temps2018.zoo)[nrow(temps2018.zoo):1]),Bound=c(coredata(temps2018.zoo$tmin),coredata(temps2018.zoo$tmax)[nrow(temps2018.zoo):1]))
 polygon(minmax.df,col="lightgrey")
 lines(temps2018.zoo$tavg, lwd=2)
+
+## Csapadék
+Prec.xts <- xts(teljes[,"Prec"], as.Date(teljes$Date))
+plot(Prec.xts["2018"], type="h", up.col="blue", col="blue")
+
+Prec.zoo <- zoo(teljes[,"Prec"], as.Date(teljes$Date))
+plot(Prec.zoo, type="h", col="blue")
