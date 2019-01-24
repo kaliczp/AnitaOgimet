@@ -43,3 +43,10 @@ plot.zoo(temps2018.zoo$tavg, xaxs="i", ylim=c(min(temps2018.zoo),max(temps2018.z
 lines(temps2018.zoo$tmin, col="blue")
 lines(temps2018.zoo$tmax, col="red")
 legend("topleft", legend=c("Max","Ave","Min"), lwd=c(1,2,1), col=c("red","black","blue"))
+
+
+##Polygonnal
+plot.zoo(temps2018.zoo$tavg, xaxs="i", ylim=c(min(temps2018.zoo),max(temps2018.zoo)),type="n",xlab="",ylab="Temp")
+minmax.df <- data.frame(Ido=c(index(temps2018.zoo),index(temps2018.zoo)[nrow(temps2018.zoo):1]),Bound=c(coredata(temps2018.zoo$tmin),coredata(temps2018.zoo$tmax)[nrow(temps2018.zoo):1]))
+polygon(minmax.df,col="lightgrey")
+lines(temps2018.zoo$tavg, lwd=2)
