@@ -19,7 +19,6 @@ sum(teljes$Prec, na.rm=TRUE)
 
 ttdate <- paste(c(rep(2017,11),rep(2018,366),rep(2019,23)),teljes$Date,sep="/")
 
-ttdate <- paste(c(rep(2017,10),rep(2018,351),rep(2019,23)),teljes$Date,sep="-")
 
 ## Save to Excel compat.
 write.csv2(teljes,"teljes.csv")
