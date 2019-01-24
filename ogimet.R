@@ -37,3 +37,7 @@ write.csv2(teljes,"teljes.csv",row.names = FALSE)
 plot(temps.xts["2018",c("tmin","tmax")])
 plot(temps.xts["2018"])
 
+plot.zoo(temps.xts["2018","tavg"], xaxs="i", ylim=c(min(temps.xts),max(temps.xts)),lwd=2,xlab="",ylab="Temp")
+lines(as.zoo(temps.xts["2018","tmin"]), col="blue")
+lines(as.zoo(temps.xts["2018","tmax"]), col="red")
+legend("topleft", legend=c("Max","Ave","Min"), lwd=c(1,2,1), col=c("red","black","blue"))
