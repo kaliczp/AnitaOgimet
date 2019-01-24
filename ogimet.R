@@ -22,7 +22,18 @@ ttdate <- paste(c(rep(2017,11),rep(2018,365),rep(2019,23)),teljes$Date,sep="/")
 teljes$Date <- ttdate
 
 library(xts)
-temps.xts <- xts(teljes[,2:4], as.Date(ttdate))
+temps.xts <- xts(teljes[,2:4], as.Date(teljes$Date))
+
+## Ábrázolás
+plot(temps.xts)
+
+plot(temps.xts["2018-05"])
+
+mean(temps.xts["2018-05","tavg"])
+mean(temps.xts["2018","tavg"])
 
 ## Save to Excel compat.
 write.csv2(teljes,"teljes.csv",row.names = FALSE)
+plot(temps.xts["2018",c("tmin","tmax")])
+plot(temps.xts["2018"])
+
