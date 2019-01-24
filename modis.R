@@ -32,3 +32,7 @@ PETH <- data.frame(Date = MODISdate, PETH1,PETH2,PETH3,PETH4)
 
 write.csv2(ETH, "eth.csv", row.names = FALSE)
 write.csv2(PETH, "peth.csv", row.names = FALSE)
+
+## PET & ET graph
+plot(MODISdate[H1 < 3000], PETH1[H1 < 3000], ylim=c(0,70), xlab="", ylab="PET & ET [mm/8days]")
+points(MODISdate[H1 < 3000], H1[H1 < 3000], col="blue")
