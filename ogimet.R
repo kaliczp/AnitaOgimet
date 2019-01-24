@@ -1,3 +1,4 @@
+#File lista
 filenames <- dir(patt="ET")
 
 i <- 1
@@ -17,10 +18,11 @@ for(i in 2:length(filenames)) {
 
 sum(teljes$Prec, na.rm=TRUE)
 
-ttdate <- paste(c(rep(2017,11),rep(2018,366),rep(2019,23)),teljes$Date,sep="/")
+ttdate <- paste(c(rep(2017,11),rep(2018,365),rep(2019,23)),teljes$Date,sep="/")
+teljes$Date <- ttdate
 
 library(xts)
 temps.xts <- xts(teljes[,2:4], as.Date(ttdate))
 
 ## Save to Excel compat.
-write.csv2(teljes,"teljes.csv")
+write.csv2(teljes,"teljes.csv",row.names = FALSE)
