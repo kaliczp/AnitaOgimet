@@ -57,3 +57,4 @@ plot(Prec.xts["2018"], type="h", up.col="blue", col="blue")
 
 Prec.zoo <- zoo(teljes[,"Prec"], as.Date(teljes$Date))
 plot(Prec.zoo, type="h", col="blue")
+
